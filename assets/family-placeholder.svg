@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
-<rect width="1200" height="900" fill="#eaf6f8"/>
-<circle cx="170" cy="170" r="100" fill="#9ad9dd"/>
-<circle cx="1030" cy="730" r="145" fill="#ffe2a3"/>
-<path d="M600 210l39 80 89 13-64 62 15 88-79-42-79 42 15-88-64-62 89-13z" fill="#f8bf48"/>
-<text x="600" y="545" text-anchor="middle" font-family="Arial,sans-serif" font-size="62" font-weight="bold" fill="#24586a">Ingalls Learning Lab</text>
-<text x="600" y="620" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" fill="#426471">A place to practice, discover, and grow.</text>
-</svg>

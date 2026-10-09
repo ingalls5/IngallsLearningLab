@@ -18,7 +18,7 @@ This is the existing family learning app, not a new site. Read `CODEX_HANDOFF.md
 - GitHub pushes and Codex merges do not automatically publish. Verify Sites access first, open its canonical source checkout using the Sites workflow, apply reviewed GitHub changes there, and build/push/package/save/deploy through that workflow. Do not replace the canonical Sites remote with this GitHub remote.
 - If Sites publishing tools are unavailable, finish and commit the change in GitHub and clearly report that production has not been updated.
 - Legacy setup-code verifiers were removed from this GitHub handoff. Preserve existing canonical production migration files rather than overwriting them with the sanitized import. Never restore the old credential values into GitHub.
-- The private family photo is excluded and a placeholder is used for development. Preserve the live Site's original photo/import when publishing unrelated changes. Ask for explicit destination-specific consent before copying the photo into GitHub.
+- The owner explicitly authorized copying the family photo into this private GitHub repository on October 9, 2026. The original photo and import are included; preserve them and keep the repository private.
 
 ## Required behavior
 

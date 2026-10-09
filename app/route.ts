@@ -1,5 +1,5 @@
 import home from '../assets/home.html?raw';
-import familyPhoto from '../assets/family-placeholder.svg?inline';
+import familyPhoto from '../assets/family-photo.jpeg?inline';
 import family from '../public/family.js?raw';
 import celebrationClient from '../public/celebration.js?raw';
 import penmanshipClient from '../public/penmanship.js?raw';

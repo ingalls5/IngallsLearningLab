@@ -12,7 +12,7 @@ The live application, database, visitor accounts, sessions, assignments, saved w
 
 Legacy student setup-code salt/hash values were sanitized out of `lib/student-seed.ts` and `drizzle/0006_owen_student.sql` before upload. Blank verifiers reject legacy first-time codes; current button login remains functional. These changes have NOT been applied to the live site. Keep existing production migrations immutable when reconciling this copy with the canonical Sites checkout; do not overwrite/replay migration 0006 there. The student seed can keep blank legacy verifiers for new local profiles.
 
-The family photo was NOT copied to GitHub: automatic approval review requires explicit consent to share it with this destination. This development copy uses `assets/family-placeholder.svg` instead. The live Site still uses the original photo. When publishing unrelated changes from GitHub, preserve the canonical Site's photo file and its import; do not replace the live photo with this placeholder unless requested. Obtain explicit user authorization before adding the photo to GitHub.
+The owner explicitly authorized copying the family photo into this private GitHub repository on October 9, 2026. `assets/family-photo.jpeg` and its original homepage import are included. The placeholder from the initial transfer has been removed. Preserve the photo and the repository's private visibility.
 
 ## Start in browser Codex
 
