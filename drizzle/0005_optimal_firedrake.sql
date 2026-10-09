@@ -1,0 +1,1 @@
+ALTER TABLE `student_logins` ADD `password_set` integer DEFAULT 0 NOT NULL;

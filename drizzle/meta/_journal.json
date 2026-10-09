@@ -1,0 +1,69 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791150308978,
+      "tag": "0000_boring_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791150342909,
+      "tag": "0001_nice_black_tarantula",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791229466531,
+      "tag": "0002_careless_wither",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1791239413034,
+      "tag": "0003_organic_vargas",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1791240272862,
+      "tag": "0004_petite_kinsey_walden",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791245346133,
+      "tag": "0005_optimal_firedrake",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1791245999479,
+      "tag": "0006_owen_student",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1791246710501,
+      "tag": "0007_fast_miracleman",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1791252069839,
+      "tag": "0008_dashing_whiplash",
+      "breakpoints": true
+    }
+  ]
+}

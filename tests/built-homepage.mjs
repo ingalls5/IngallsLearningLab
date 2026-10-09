@@ -1,0 +1,13 @@
+import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';import assert from 'node:assert/strict';
+const require=createRequire(import.meta.resolve('wrangler'));const {Miniflare}=await import(require.resolve('miniflare'));
+const base=path.resolve('dist/server');
+const files=fs.readdirSync(base,{recursive:true}).filter(f=>f.endsWith('.js'));
+const mf=new Miniflare({modules:files.map(f=>({type:'ESModule',path:path.join(base,f)})).sort((a,b)=>a.path===path.join(base,'index.js')?-1:b.path===path.join(base,'index.js')?1:0),modulesRoot:base,compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB']});
+try{
+ const db=await mf.getD1Database('DB');for(const f of fs.readdirSync('drizzle').filter(f=>f.endsWith('.sql')).sort()){const sql=fs.readFileSync('drizzle/'+f,'utf8');for(const statement of sql.split('--> statement-breakpoint').filter(s=>s.trim()))await db.prepare(statement.trim().replace(/;\s*$/,'')).run();}
+ const ua='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.2 Safari/605.1.15';
+ const response=await mf.dispatchFetch('https://lab.example/',{headers:{'User-Agent':ua}});assert.equal(response.status,200);const html=await response.text();assert.match(html,/Welcome to/);assert.match(html,/Log in/);assert.doesNotMatch(html,/Internal Server Error/);
+ const ownerHeaders={'oai-authenticated-user-id':'test-owner','oai-authenticated-user-email':'ingalls.joe@gmail.com','User-Agent':ua};const owner=await mf.dispatchFetch('https://lab.example/',{headers:ownerHeaders});assert.equal(owner.status,200);const ownerHTML=await owner.text();assert.match(ownerHTML,/Accounts &amp; access/);assert.match(ownerHTML,/flash-arrive/);assert.match(ownerHTML,/All done/);
+ for(const username of ['jacob','owen']){const login=await mf.dispatchFetch('https://lab.example/api/student/session',{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://lab.example'},body:JSON.stringify({action:'button-login',username})});assert.equal(login.status,200);const cookie=login.headers.get('Set-Cookie').split(';')[0];const home=await mf.dispatchFetch('https://lab.example/?homework=1',{headers:{Cookie:cookie,'User-Agent':ua}});assert.equal(home.status,200);const content=await home.text();assert.match(content,new RegExp(username==='owen'?'Owen’s homework':'Jacob’s homework'));assert.doesNotMatch(content,/Accounts &amp; access/);}
+ console.log('Built Worker passed: anonymous Safari homepage, Owner page, Jacob and Owen button sign-in, homework scoping, and flash card styles.');
+}finally{await mf.dispose()}
